@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Muvi Consumer</string>
+    <string name="movie_poster">Poster film</string>
+    <string name="release">Rilis : %s</string>
+    <string name="unfavorite">Batal Favorit</string>
+    <string name="sample_text">Memuat…</string>
+    <string name="release_date">Rilis : %s</string>
+    <string name="rating">Nilai : %s</string>
+    <string name="info">Info</string>
+    <string name="no_quit">tidak</string>
+    <string name="sure_to_unfavorite">Yakin bukan favorit?</string>
+</resources>
