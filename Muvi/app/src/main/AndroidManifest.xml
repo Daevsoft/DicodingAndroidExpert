@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daevsoft.muvi">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <permission
+        android:name="com.daevsoft.muvi.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.daevsoft.muvi.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <provider
+            android:name=".provider.MuviFavMovieProvider"
+            android:authorities="com.daevsoft.muvi"
+            android:exported="true"
+            android:readPermission="com.daevsoft.muvi.READ_DATABASE"
+            android:writePermission="com.daevsoft.muvi.WRITE_DATABASE" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings" />
+
+        <service
+            android:name=".widgets.MuviWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver android:name=".widgets.MuviWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/muvi_widget_info" />
+        </receiver>
+        <receiver
+            android:name=".reminders.ReminderReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".TvShowDetailActivity" />
+        <activity android:name=".MovieDetailActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/nav_movieFragment">
+
+    <fragment
+        android:id="@+id/nav_movieFragment"
+        android:name="com.daevsoft.muvi.ui.movies.MovieFragment"
+        android:label="@string/movies"
+        tools:layout="@layout/fragment_movie"/>
+    <fragment
+        android:id="@+id/nav_tvShowFragment"
+        android:name="com.daevsoft.muvi.ui.tvshows.TvShowFragment"
+        android:label="@string/tv_shows"
+        tools:layout="@layout/fragment_tv_show" />
+    <fragment
+        android:id="@+id/nav_favoriteFragment"
+        android:name="com.daevsoft.muvi.FavoriteFragment"
+        android:label="@string/favorite"
+        tools:layout="@layout/fragment_favorite" />
+</navigation>
